@@ -5,16 +5,19 @@ import {
   Route
 } from 'react-router-dom';
 import CharacterPage from '../../containers/CharacterPage';
-// import Header from '../header/Header';
+import { ThemeProvider } from '../../state/themeContext';
+import Header from '../header/Header';
 
 
 export default function App() {
   return (
     <Router>
-      {/* <Header /> */}
-      <Switch>
-        <Route path="/" component={CharacterPage}/>
-      </Switch>
+      <ThemeProvider>
+        <Header />
+        <Switch>
+          <Route path="/" component={CharacterPage}/>
+        </Switch>
+      </ThemeProvider>
     </Router>
   );
 }
