@@ -1,26 +1,17 @@
-import React from 'react';
-
-export const lightTheme = {
-  body: '#E2E2E2',
-  text: '#363537',
-  toggleBorder: '#FFF',
-  gradient: 'linear-gradient(#39598A, #79D7ED)',
-};
-
-export const darkTheme = {
-  body: '#363537',
-  text: '#FAFAFA',
-  toggleBorder: '#6B8096',
-  gradient: 'linear-gradient(#091236, #1E215D)',
-};
+import React, { useContext } from 'react';
+import { ThemeContext } from '../../state/themeContext';
 
 const Header = () => {
+  const { setTheme, theme } = useContext(ThemeContext);
+
+  const changeTheme = () => {
+    if(theme === 'lightTheme') setTheme('darkTheme');
+    else setTheme('lightTheme');
+  };
+
   return (
     <>
-      <div onChange={this.onChangeValue}> 
-        <input type="radio" value="light" name="theme" /> Light Mode 
-        <input type="radio" value="dark" name="theme" />  Dark Mode
-      </div>
+      <input type="checkbox" onChange={changeTheme} /> Toggle Theme 
     </>
   );
 };
