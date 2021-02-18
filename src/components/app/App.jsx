@@ -14,10 +14,10 @@ export default function App() {
     <Router>
       <ThemeProvider>
         <Header />
+        <Switch>
+          <Route path="/" component={CharacterPage}/>
+        </Switch>
       </ThemeProvider>
-      <Switch>
-        <Route path="/" component={CharacterPage}/>
-      </Switch>
     </Router>
   );
 }
