@@ -5,13 +5,13 @@ import {
   Route
 } from 'react-router-dom';
 import CharacterPage from '../../containers/CharacterPage';
-// import Header from '../header/Header';
+import Header from '../header/Header';
 
 
 export default function App() {
   return (
     <Router>
-      {/* <Header /> */}
+      <Header />
       <Switch>
         <Route path="/" component={CharacterPage}/>
       </Switch>
